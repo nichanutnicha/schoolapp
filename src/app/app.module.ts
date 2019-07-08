@@ -17,7 +17,8 @@ import { environment } from "src/environments/environment";
 import { AuthModule } from "ng6-md-auth";
 import { StudentListComponent } from './student-list/student-list.component';
 import { AddStudentDialogComponent } from './add-student-dialog/add-student-dialog.component';
-
+import {ScrollDispatchModule} from "@angular/cdk/scrolling";
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 const apiSrvCfg = environment;
 @NgModule({
@@ -40,7 +41,9 @@ const apiSrvCfg = environment;
     ReactiveFormsModule.withConfig({ warnOnNgModelWithFormControl: "never" }),
     HttpClientModule,
     NgxSpinnerModule,
-    AuthModule.forRoot(apiSrvCfg)
+    AuthModule.forRoot(apiSrvCfg),
+    ScrollDispatchModule,
+    MatProgressSpinnerModule
   ],
   entryComponents: [AddStudentDialogComponent],
   providers: [],

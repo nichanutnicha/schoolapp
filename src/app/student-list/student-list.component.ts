@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material';
-import { AddStudentDialogComponent } from '../add-student-dialog/add-student-dialog.component';
+import { Component, OnInit } from "@angular/core";
+import { MatDialog } from "@angular/material";
+import { AddStudentDialogComponent } from "../add-student-dialog/add-student-dialog.component";
 
 @Component({
-  selector: 'app-student-list',
-  templateUrl: './student-list.component.html',
-  styleUrls: ['./student-list.component.scss']
+  selector: "app-student-list",
+  templateUrl: "./student-list.component.html",
+  styleUrls: ["./student-list.component.scss"]
 })
 export class StudentListComponent implements OnInit {
   students = [
-
 
   ];
   constructor(public dialog: MatDialog) { }
@@ -19,13 +18,16 @@ export class StudentListComponent implements OnInit {
   }
   addStudent() {
     this.students.push({
-      fullname: "ธีรศักดิ์ ทับฤทธิ์",
-      telno: "0638465966"
-    })
+      fullname: "ธีระ ทับฤทธิ์",
+      numcard: "1-1042-00754-85-9",
+      status: "ผ่าน",
+      manage: "แก้ไข"
+
+    });
   }
   openDialog(): void {
     const dialogRef = this.dialog.open(AddStudentDialogComponent, {
-      width: "800px",
+      width: "1100px",
 
     });
 
@@ -34,6 +36,4 @@ export class StudentListComponent implements OnInit {
       this.addStudent();
     });
   }
-
 }
-
