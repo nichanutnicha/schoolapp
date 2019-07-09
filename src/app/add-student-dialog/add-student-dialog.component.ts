@@ -25,6 +25,14 @@ export class AddStudentDialogComponent implements OnInit {
     console.log(files.length);
     if (files) {
       this.fileSelected = files[0].name;
+    }
+
+  }
+
+  detectFile2(ev) {
+    var files: Array<any> = ev.target.files;
+    console.log(files.length);
+    if (files) {
       Array.from(files).forEach((file: any) => {
         console.log(file.name);
         this.filesMulti.push(file);
@@ -33,6 +41,7 @@ export class AddStudentDialogComponent implements OnInit {
     }
 
   }
+
   ngOnInit() {
     this.firstFormGroup = this._formBuilder.group({
       firstCtrl: ['', Validators.required]
@@ -55,7 +64,7 @@ export class AddStudentDialogComponent implements OnInit {
           sex: "ชาย",
           nationality: "ไทย",
           id: "1-1042-00754-85-9",
-          birthdate: "17 สิงหาคม พ.ศ.2553",
+          birthdate: "17 สิงหาคม พ.ศ. 2553",
           birthtime: "16.11 น.",
           placebirth: "โรงพยาบาลบี.แคร์ เมดิคอลเซ็นเตอร์ 29 หมู่ที่ 6 แขวงสายไหม เขตสายไหม กทม.",
           numson: "1",
