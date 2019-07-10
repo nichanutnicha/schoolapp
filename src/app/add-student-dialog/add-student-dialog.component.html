@@ -2,7 +2,7 @@
 
   <mat-step [stepControl]="firstFormGroup">
     <form [formGroup]="firstFormGroup">
-      <ng-template matStepLabel alt ="ตรวจสอบ">ตรวจสอบ</ng-template>
+      <ng-template matStepLabel alt="ตรวจสอบ">ตรวจสอบ</ng-template>
       <h5 class="matStep-Label">ตรวจสอบให้แน่ใจว่าคุณได้สแกนเอกสารการสมัครเรียนเรียบร้อยแล้วใช่ หรือไม่ ?</h5>
       <div>
 
@@ -251,7 +251,7 @@
       <div>
         <button class="buttonpage5" mat-raised-button color="accent" matStepperPrevious>ย้อนกลับ</button>
         &nbsp;
-        <button mat-raised-button color="primary" (click)="aa()" matStepperNext>บันทึก</button>
+        <button mat-raised-button color="primary" (click)="aa()" matStepperNext><mat-icon>save</mat-icon>บันทึก</button>
       </div>
     </cdk-virtual-scroll-viewport>
   </mat-step>
