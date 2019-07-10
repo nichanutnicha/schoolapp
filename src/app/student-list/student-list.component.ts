@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { MatDialog } from "@angular/material";
 import { AddStudentDialogComponent } from "../add-student-dialog/add-student-dialog.component";
+import {MatSelectModule} from '@angular/material/select';
 
 @Component({
   selector: "app-student-list",
@@ -11,6 +12,10 @@ export class StudentListComponent implements OnInit {
   students = [
 
   ];
+  foods: Food[] = [
+    {value: 'steak-0', viewValue: 'ผ่าน'},
+    {value: 'pizza-1', viewValue: 'ไม่ผ่าน'},
+  ];
   constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
@@ -20,7 +25,6 @@ export class StudentListComponent implements OnInit {
     this.students.push({
       fullname: "ธีระ ทับฤทธิ์",
       numcard: "1-1042-00754-85-9",
-      status: "ผ่าน",
       manage: "แก้ไข"
 
     });
@@ -36,4 +40,8 @@ export class StudentListComponent implements OnInit {
       this.addStudent();
     });
   }
+}
+export interface Food {
+  value: string;
+  viewValue: string;
 }

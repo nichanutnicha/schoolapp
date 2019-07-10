@@ -3,7 +3,7 @@
   <mat-step [stepControl]="firstFormGroup">
     <form [formGroup]="firstFormGroup">
       <ng-template matStepLabel>ตรวจสอบ</ng-template>
-      <h5 class="matStep-Label">ตรวจสอบให้แน่ใจว่าคุณได้สแกนเอกสารการสมัครเรียบร้อยแล้วใช่ หรือไม่ ?</h5>
+      <h5 class="matStep-Label">ตรวจสอบให้แน่ใจว่าคุณได้สแกนเอกสารการสมัครเรียนเรียบร้อยแล้วใช่ หรือไม่ ?</h5>
       <div>
 
         <button class="matraised-button" mat-raised-button color="primary" (click)="aa()">ไม่</button>
@@ -21,19 +21,17 @@
 
       <div class="container">
         <input hidden type="file" #fileInput (change)="detectFiles($event)">
+        <h6 class="labelpage2">● เลือกไฟล์สูติบัตร ●</h6>
         <div class="container">
           <mat-icon class="icon-unarchive iconunarchive" (click)="fileInput.click()">unarchive</mat-icon>
-          <input hidden type="file" #fileInput (change)= "detectFiles($event)">
-        </div>
-
-        <h6 class="labelpage2">● กดที่ไอคอนเพื่ออัปโหลดไฟล์ใบสูติบัตร ●</h6>
-        <div class="filepage5">{{fileSelected}}
+          <input hidden type="file" #fileInput (change)="detectFiles($event)">
         </div>
       </div>
-
+      <div class="filepage5">{{fileSelected}}
+      </div>
       <div><br>
         <button class="matraised-button2" mat-raised-button color="primary" (click)="aa()">ยกเลิก</button>
-        &nbsp;     &nbsp;
+        &nbsp; &nbsp;
         <button mat-raised-button color="primary" matStepperNext>ถัดไป</button>
       </div>
     </form>
@@ -48,7 +46,7 @@
         <div class="row mt-3">
           <div class="col-6">
             <mat-card class="example-card">
-              <img mat-card-image src="assets/su.jpg" >
+              <img mat-card-image src="assets/su.jpg">
             </mat-card>
           </div>
 
@@ -123,9 +121,9 @@
               </mat-form-field>
             </div>
           </div>
-          <div class = "spinner-doc" *ngIf="isshow">กำลังโหลดไฟล์ "{{fileSelected}}"
-          <mat-spinner class = "spinner-doc1" *ngIf="isshow"></mat-spinner>
-        </div>
+          <div class="spinner-doc" *ngIf="isshow">กำลังโหลดไฟล์ "{{fileSelected}}"
+            <mat-spinner class="spinner-doc1" *ngIf="isshow"></mat-spinner>
+          </div>
         </div>
       </div>
 
@@ -145,9 +143,9 @@
       <ng-template matStepLabel>เลือกไฟล์เอกสารประกอบการสมัครอื่นๆ</ng-template>
 
       <div class="container">
-          <mat-icon class="icon-unarchive iconunarchive" (click)="fileInput2.click()">unarchive</mat-icon>
-          <input hidden type="file" #fileInput2 multiple (change)= "detectFile2($event)">
-        </div>
+        <mat-icon class="icon-unarchive iconunarchive" (click)="fileInput2.click()">unarchive</mat-icon>
+        <input hidden type="file" #fileInput2 multiple (change)="detectFile2($event)">
+      </div>
 
       <h5 class="filepage4">● กดที่ไอคอนเพื่ออัปโหลดไฟล์เอกสารประกอบการสมัครอื่นๆ ●</h5>
       <p class="fileotherpage4">เช่น ข้อมูลส่วนตัว,สำเนาบัตรประชาชน, <br>
@@ -247,14 +245,14 @@
 
       <h5 class="testpage5">●ไฟล์เอกสารประกอบการสมัครอื่นๆ●</h5>
       <div class="filepage5" *ngFor="let item of filesMulti">
-          <mat-icon class="icon-done">done</mat-icon>{{item.name}}
-        </div> <br>
+        <mat-icon class="icon-done">done</mat-icon>{{item.name}}
+      </div> <br>
 
-        <div>
-            <button class="buttonpage5" mat-raised-button color="primary" matStepperPrevious>ย้อนกลับ</button>
-            &nbsp;
-            <button mat-raised-button color="primary" (click)="aa()" matStepperNext>บันทึก</button>
-          </div>
+      <div>
+        <button class="buttonpage5" mat-raised-button color="primary" matStepperPrevious>ย้อนกลับ</button>
+        &nbsp;
+        <button mat-raised-button color="primary" (click)="aa()" matStepperNext>บันทึก</button>
+      </div>
     </cdk-virtual-scroll-viewport>
   </mat-step>
 </mat-horizontal-stepper>
