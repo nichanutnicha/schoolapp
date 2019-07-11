@@ -7,34 +7,43 @@
   <h4 class="mt-3">รายชื่อนักเรียน</h4>
   <div class="col-12">
 
-    <h6 (click)="openDialog()"><img class="iconaddcirclestep2"src="https://image.flaticon.com/icons/svg/138/138858.svg" (click)="openDialog()" alt=""> เพิ่มข้อมูลการสมัครเรียน</h6>
+    <h6 (click)="openDialog()"><img class="iconaddcirclestep2" src="https://image.flaticon.com/icons/svg/138/138858.svg"
+        (click)="openDialog()" alt=""> เพิ่มข้อมูลการสมัครเรียน</h6>
 
     <div class="row mt-3">
-      <div class="col-3"><h5>ชื่อ-สกุล</h5></div>
-      <div class="col-3"><h5>เลขบัตรประจำตัวประชาชน</h5></div>
-      <div class="col-3"><h5>สถานะการสมัคร</h5></div>
-      <div class="col-3"><h5>จัดการ</h5></div>
+      <div class="col-3 border-bottom" style="text-align: center">
+        <h5>ชื่อ-สกุล</h5>
+      </div>
+      <div class="col-3 border-bottom" style="text-align: center">
+        <h5>เลขบัตรประจำตัวประชาชน</h5>
+      </div>
+      <div class="col-3 border-bottom" style="text-align: center">
+        <h5>สถานะการสมัคร</h5>
+      </div>
+      <div class="col-3 border-bottom" style="text-align: center">
+        <h5>จัดการ</h5>
+      </div>
 
     </div>
     <div class="row mt-2" *ngFor="let student of students">
-      <div class="col-3">{{student.fullname}}</div>
-      <div class="col-3">{{student.numcard}}</div>
-      <div class="col-3">
-
+      <div class="col-3 border-bottom" style="text-align: center">{{student.fullname}}</div>
+      <div class="col-3 border-bottom" style="text-align: center">{{student.numcard}}</div>
+      <div class="col-3 border-bottom" style="text-align: center">
         <mat-select class="select-edit">
           <mat-option *ngFor="let food of foods" [value]="food.value">
             {{food.viewValue}}
           </mat-option>
         </mat-select>
-
       </div>
-      <div class="col-3"> <button mat-raised-button color="primary">
+      <div class="col-3 border-bottom" style="text-align: center">
+        <button mat-raised-button color="primary">
           <mat-icon>edit</mat-icon>แก้ไข
         </button>
         &nbsp;
         <button mat-raised-button color="warn">
           <mat-icon>file_download</mat-icon>ดาวน์โหลด
-        </button></div>
+        </button>
+      </div>
     </div>
   </div>
 </div>
