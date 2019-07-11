@@ -21,7 +21,7 @@
       <div class="col-3">{{student.numcard}}</div>
       <div class="col-3">
 
-        <mat-select>
+        <mat-select class="select-edit">
           <mat-option *ngFor="let food of foods" [value]="food.value">
             {{food.viewValue}}
           </mat-option>
