@@ -1,14 +1,14 @@
 <div class="row mt-3" *ngIf="students.length === 0">
   <h4 class="label">เพิ่มข้อมูลการสมัครเรียน</h4>
-  <mat-icon class="iconaddcircle" (click)="openDialog()">add_circle</mat-icon>
+  <img class="iconaddcircle" src="https://image.flaticon.com/icons/svg/138/138858.svg" (click)="openDialog()" alt="">
 </div>
 
 <div class="row" *ngIf="students.length > 0">
   <h4 class="mt-3">รายชื่อนักเรียน</h4>
   <div class="col-12">
-    <div>
-      <mat-icon class="iconaddcirclestep2" (click)="openDialog()">add_circle เพิ่มข้อมูลนักเรียน</mat-icon>
-    </div>
+
+    <h6 (click)="openDialog()"><img class="iconaddcirclestep2"src="https://image.flaticon.com/icons/svg/138/138858.svg" (click)="openDialog()" alt=""> เพิ่มข้อมูลการสมัครเรียน</h6>
+
     <div class="row mt-3">
       <div class="col-3"><h5>ชื่อ-สกุล</h5></div>
       <div class="col-3"><h5>เลขบัตรประจำตัวประชาชน</h5></div>
